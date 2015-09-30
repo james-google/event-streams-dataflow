@@ -8,11 +8,15 @@
 If you don’t have a GCP project, please contact coordinators before the training.
 4. Software: Eclipse and JDK (Java development kit). Installation instructions [here](http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/marsr). 
 
-## Lab Exercise 1:
+## Lab Exercise 1: Hello World with Dataflow
+
+
+
+## Lab Exercise 2 [optional]: WorkCount SDK Example
 
 The following example is based off of the Dataflow SDK example [here](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/tree/master/examples) and will serve to demonstrate the basic functionality of Google Cloud Dataflow, and act as starting points for the development of more complex pipelines.
 
-## Word Count
+### Word Count
 
 A good starting point for new users is our set of
 [word count](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/examples/src/main/java/com/google/cloud/dataflow/examples) examples, which computes word frequencies.  This example (along with others are described in detail in the accompanying [walkthrough](https://cloud.google.com/dataflow/examples/wordcount-example).
@@ -93,3 +97,7 @@ directory for some common and useful patterns like joining, filtering, and combi
 
 The [`complete`](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/examples/src/main/java/com/google/cloud/dataflow/examples/complete)
 directory contains a few realistic end-to-end pipelines.
+
+## Lab Exercise 3: Build out traffic sensor pipeline
+
+## Lab Exercise 4 [Optional]: Connecting a UI to event streams
