@@ -10,7 +10,18 @@ If you don’t have a GCP project, please contact coordinators before the traini
 
 ## Lab Exercise 1: Hello World with Dataflow
 
+1. Create a new Google Cloud Platform project: https://console.developers.google.com/project
 
+2. Enable the Google Container Engine and Google Compute Engine APIs
+
+3. Install gcloud: https://cloud.google.com/sdk/
+
+4. Configure your project and zone: gcloud config set project YOUR_PROJECT ; gcloud config set compute/zone us-central1-f
+
+5. Clone the lab repository to your workstation (or download zipped lab files [here]()):
+    ```shell
+    $ git clone https://github.com/evandbrown/jenkins-kube-cd.git
+    ```
 
 ## Lab Exercise 2: [optional] WorkCount SDK Example
 
