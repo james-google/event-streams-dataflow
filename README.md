@@ -20,7 +20,7 @@ If you don’t have a GCP project, please contact coordinators before the traini
 
 5. Clone the lab repository to your workstation (or download zipped lab files [here](https://github.com/james-google/event-streams-dataflow/archive/master.zip)):
     ```shell
-    $ git clone https://github.com/evandbrown/jenkins-kube-cd.git
+    $ git clone https://github.com/james-google/event-streams-dataflow.git
     ```
 
 ## Lab Exercise 2: [optional] WorkCount SDK Example
