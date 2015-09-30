@@ -2,11 +2,11 @@
 
 ## Prerequisites
 
-1. Install Google Cloud SDK
+1. [Install Google Cloud SDK](https://cloud.google.com/sdk/)
 2. A Google Cloud Platform Account
-3. Read and execute instructions specified in  Cloud Dataflow Getting Started  
+3. Read and execute instructions specified in [Cloud Dataflow Getting Started](https://cloud.google.com/dataflow/getting-started)
 If you don’t have a GCP project, please contact coordinators before the training.
-4. Software: Eclipse and JDK (Java development kit). Installation instructions here. 
+4. Software: Eclipse and JDK (Java development kit). Installation instructions [here](http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/marsr). 
 
 ## Lab Exercise 1:
 
@@ -15,7 +15,7 @@ The following example is based off of the Dataflow SDK example [here](https://gi
 ## Word Count
 
 A good starting point for new users is our set of
-[word count](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/examples/src/main/java/com/google/cloud/dataflow/examples) examples, which computes word frequencies.  This series of four successively more detailed pipelines is described in detail in the accompanying [walkthrough](https://cloud.google.com/dataflow/examples/wordcount-example).
+[word count](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/examples/src/main/java/com/google/cloud/dataflow/examples) examples, which computes word frequencies.  This example (along with others are described in detail in the accompanying [walkthrough](https://cloud.google.com/dataflow/examples/wordcount-example).
 
 1. [`MinimalWordCount`](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/examples/src/main/java/com/google/cloud/dataflow/examples/MinimalWordCount.java) is the simplest word count pipeline and introduces basic concepts like [Pipelines](https://cloud.google.com/dataflow/model/pipelines),
 [PCollections](https://cloud.google.com/dataflow/model/pcollection),
