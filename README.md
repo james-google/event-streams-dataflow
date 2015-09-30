@@ -4,7 +4,7 @@
 
 1. [Install Google Cloud SDK](https://cloud.google.com/sdk/)
 2. A Google Cloud Platform Account
-3. Read and execute instructions specified in [Cloud Dataflow Getting Started](https://cloud.google.com/dataflow/getting-started)
+3. Read and execute instructions specified in [Cloud Dataflow Getting Started](https://cloud.google.com/dataflow/getting-started). 
 If you don’t have a GCP project, please contact coordinators before the training.
 4. Software: Eclipse and JDK (Java development kit). Installation instructions [here](http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/marsr). 
 
