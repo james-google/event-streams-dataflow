@@ -1,4 +1,8 @@
-# Example Pipelines
+# Lab: Build an Event Streams Pipeline with Pub/Sub, Dataflow and BigQuery
+
+The examples included in this module serve to demonstrate the basic
+functionality of Google Cloud Dataflow, and act as starting points for
+the development of more complex pipelines.
 
 The examples included in this module serve to demonstrate the basic
 functionality of Google Cloud Dataflow, and act as starting points for
