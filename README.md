@@ -1,12 +1,16 @@
 # Lab: Build an Event Streams Pipeline with Pub/Sub, Dataflow and BigQuery
 
-The examples included in this module serve to demonstrate the basic
-functionality of Google Cloud Dataflow, and act as starting points for
-the development of more complex pipelines.
+## Prerequisites
 
-The examples included in this module serve to demonstrate the basic
-functionality of Google Cloud Dataflow, and act as starting points for
-the development of more complex pipelines.
+1. Install Google Cloud SDK
+2. A Google Cloud Platform Account
+3. Read and execute instructions specified in  Cloud Dataflow Getting Started  
+If you don’t have a GCP project, please contact coordinators before the training.
+4. Software: Eclipse and JDK (Java development kit). Installation instructions here. 
+
+## Lab Exercise 1:
+
+The following example is based off of the Dataflow SDK example [here](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/tree/master/examples) and will serve to demonstrate the basic functionality of Google Cloud Dataflow, and act as starting points for the development of more complex pipelines.
 
 ## Word Count
 
