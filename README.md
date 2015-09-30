@@ -12,7 +12,7 @@ If you don’t have a GCP project, please contact coordinators before the traini
 
 
 
-## Lab Exercise 2 [optional]: WorkCount SDK Example
+## Lab Exercise 2: [optional] WorkCount SDK Example
 
 The following example is based off of the Dataflow SDK example [here](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/tree/master/examples) and will serve to demonstrate the basic functionality of Google Cloud Dataflow, and act as starting points for the development of more complex pipelines.
 
@@ -100,4 +100,4 @@ directory contains a few realistic end-to-end pipelines.
 
 ## Lab Exercise 3: Build out traffic sensor pipeline
 
-## Lab Exercise 4 [Optional]: Connecting a UI to event streams
+## Lab Exercise 4: [Optional] Connecting a UI to event streams
