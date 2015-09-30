@@ -100,4 +100,4 @@ directory contains a few realistic end-to-end pipelines.
 
 ## Lab Exercise 3: Build out traffic sensor pipeline
 
-## Lab Exercise 4: [Optional] Connecting a UI to event streams
+## Lab Exercise 4: [optional] Connecting a UI to event streams
