@@ -19,8 +19,11 @@ In this first exercise, we'll configure a Hello World sample to ensure your Data
 ![submitted job](https://cloud.google.com/dataflow/images/gs-job-status-done.png)
 
 3. The final step is to download the lab files required for building the WordCount and Traffic sensor pipelines. Either clone the repository to your local workstation via:
-
-    git clone https://github.com/evandbrown/jenkins-kube-cd.git
+    ```
+    git clone https://github.com/james-google/event-streams-dataflow.git
+    ```
+or
+    Download via this zipped file.
 
 ## Lab Exercise 2: [optional] WorkCount SDK Example
 
