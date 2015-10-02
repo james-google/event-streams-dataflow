@@ -56,7 +56,10 @@ In this second lab, we'll use the WordCount example included in the [SDK example
 
 ![](https://cloud.githubusercontent.com/assets/8822452/10250675/4acbb328-68fa-11e5-80ce-5fc00a343aa0.png)<br/><br/>
 8. After you enter the appropriate arguments, click **Run**.<br/><br/>
-9. Navigate to [console.developers.google.com](https://console.developers.google.com) > then select **Dataflow** under the **Big Data** section to view the newly launched Dataflow job. 
+9. Navigate to [console.developers.google.com](https://console.developers.google.com) > then select **Dataflow** under the **Big Data** section to view the newly launched Dataflow job. <br/><br/>
+10. Click on the first Dataflow job (ordered by most recent in decending order), and you can now view the status and progress of your Dataflow WordCount job.
+
+![]()
 
 
 ## Beyond Word Count
