@@ -10,18 +10,20 @@ If you don’t have a GCP project, please contact coordinators before the traini
 
 ## Lab Exercise 1: Hello World with Dataflow
 
-1. Create a new Google Cloud Platform project: https://console.developers.google.com/project
+In this first exercise, we'll configure a Hello World sample to ensure your Dataflow environment is up and configured properly. 
 
-2. Enable the Google Container Engine and Google Compute Engine APIs
+1. Follow the following set of instructions for the [Dataflow SDK Eclipse Starter Project](https://cloud.google.com/dataflow/getting-started-eclipse) to use as a baseline Java project.
 
-3. Install gcloud: https://cloud.google.com/sdk/
+2.  Once you've imported the project (ensure you test on both LOCAL and SERVICE run configurations), you should have the following output in your console:
 
-4. Configure your project and zone: gcloud config set project YOUR_PROJECT ; gcloud config set compute/zone us-central1-f
+![submitted job](https://cloud.google.com/dataflow/images/gs-job-status-done.png)
 
-5. Clone the lab repository to your workstation (or download zipped lab files [here](https://github.com/james-google/event-streams-dataflow/archive/master.zip)):
-    ```shell
-    $ git clone https://github.com/james-google/event-streams-dataflow.git
-    ```
+3. The final step is to download the lab files required for building the WordCount and Traffic sensor pipelines. Either clone the repository to your local workstation via:
+
+
+    fdsafdsafsd
+    fadsfsafsda
+
 
 ## Lab Exercise 2: [optional] WorkCount SDK Example
 
@@ -29,24 +31,13 @@ The following example is based off of the Dataflow SDK example [here](https://gi
 
 ### Word Count
 
-A good starting point for new users is our set of
-[word count](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/examples/src/main/java/com/google/cloud/dataflow/examples) examples, which computes word frequencies.  This example (along with others are described in detail in the accompanying [walkthrough](https://cloud.google.com/dataflow/examples/wordcount-example).
+In this second lab, we'll use the WordCount example included in the [SDK examples](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/examples/src/main/java/com/google/cloud/dataflow/examples), which computes word frequencies.  This example (along with others are described in detail in the accompanying [walkthrough](https://cloud.google.com/dataflow/examples/wordcount-example).
 
-1. [`MinimalWordCount`](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/examples/src/main/java/com/google/cloud/dataflow/examples/MinimalWordCount.java) is the simplest word count pipeline and introduces basic concepts like [Pipelines](https://cloud.google.com/dataflow/model/pipelines),
-[PCollections](https://cloud.google.com/dataflow/model/pcollection),
-[ParDo](https://cloud.google.com/dataflow/model/par-do),
-and [reading and writing data](https://cloud.google.com/dataflow/model/reading-and-writing-data) from external storage.
-
-1. [`WordCount`](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/examples/src/main/java/com/google/cloud/dataflow/examples/WordCount.java) introduces Dataflow best practices like [PipelineOptions](https://cloud.google.com/dataflow/pipelines/constructing-your-pipeline#Creating) and custom [PTransforms](https://cloud.google.com/dataflow/model/composite-transforms).
-
-1. [`DebuggingWordCount`](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/examples/src/main/java/com/google/cloud/dataflow/examples/DebuggingWordCount.java)
-shows how to view live aggregators in the [Dataflow Monitoring Interface](https://cloud.google.com/dataflow/pipelines/dataflow-monitoring-intf), get the most out of
-[Cloud Logging](https://cloud.google.com/dataflow/pipelines/logging) integration, and start writing
-[good tests](https://cloud.google.com/dataflow/pipelines/testing-your-pipeline).
-
-1. [`WindowedWordCount`](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/examples/src/main/java/com/google/cloud/dataflow/examples/WindowedWordCount.java) shows how to run the same pipeline over either unbounded PCollections in streaming mode or bounded PCollections in batch mode.
+[`WordCount`](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/examples/src/main/java/com/google/cloud/dataflow/examples/WordCount.java) introduces Dataflow best practices like [PipelineOptions](https://cloud.google.com/dataflow/pipelines/constructing-your-pipeline#Creating) and custom [PTransforms](https://cloud.google.com/dataflow/model/composite-transforms).
 
 ## Building and Running
+
+1. Drag and drop the 
 
 The examples in this repository can be built and executed from the root directory by running:
 
