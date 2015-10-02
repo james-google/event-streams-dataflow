@@ -73,8 +73,7 @@ After you've finished running your first few word count pipelines, take a look a
 directory for some common and useful patterns like joining, filtering, and combining.
 
 The [`complete`](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/examples/src/main/java/com/google/cloud/dataflow/examples/complete)
-directory contains a few realistic end-to-end pipelines.
-
+directory contains a few realistic end-to-end pipelines.<br/><br/>
 12. You've now wrapped up Lab exercise 2...now onto the "real stuff"!
 
 ## Lab Exercise 3: Build out traffic sensor pipeline
