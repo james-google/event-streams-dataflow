@@ -18,7 +18,7 @@ In this first exercise, we'll configure a Hello World sample to ensure your Data
 
 ![submitted job](https://cloud.google.com/dataflow/images/gs-job-status-done.png)
 
-#### Lab Files
+#### Download Lab Files
 The final step is to download the lab files required for building the WordCount and Traffic sensor pipelines. 
 
 1. Either clone the repository to your local workstation via:
