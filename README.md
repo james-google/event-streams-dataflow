@@ -82,7 +82,13 @@ In this third lab, we'll construct a traffic IoT sensor sample based on the SDK 
 
 1. To begin, drag and drop the **TrafficMaxLaneFlow.java** file from the downloaded lab files into the **source/main/java** folder within your starter project in Eclipse, on top of the "com.google.cloud.dataflow.starter" package.
 
-2. 
+2. Next, select the following files and drag and drop these files into the **source/main/java** folder within your starter project in Eclipse, on top of the "com.google.cloud.dataflow.starter" package:
+  * DataflowExampleOptions.java
+  * DataflowExampleUtils.java
+  * ExampleBigQueryTableOptions.java
+  * ExamplePubsubTopicOptions.java
+  * PubsubFileInjector.java<br/><br/>
+3. Select  
 
 
 ## Lab Exercise 4: [optional] Connecting a UI to event streams
