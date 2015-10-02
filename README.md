@@ -22,7 +22,9 @@ The final step is to download the lab files required for building the WordCount 
 
 * Either clone the repository to your local workstation via:
 
+    ```
     git clone https://github.com/james-google/event-streams-dataflow.git
+    ```
 
 or
     
