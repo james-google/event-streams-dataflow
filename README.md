@@ -16,10 +16,8 @@ In this first exercise, we'll configure a Hello World sample to ensure your Data
 
 3. Once you've imported the project (ensure you test on both LOCAL and SERVICE run configurations), you should have the following output in your console:
 
-![submitted job](https://cloud.google.com/dataflow/images/gs-job-status-done.png)
-
-4. After these steps are completed, create a Google Cloud Storage (GCS) bucket by navigating to [console.developers.google.com](https://console.developers.google.com) > then select **Storage** > **Cloud Storage** > **Browser** > then click **Create Bucket**
-
+![submitted job](https://cloud.google.com/dataflow/images/gs-job-status-done.png)<br/><br/>
+4. After these steps are completed, create a Google Cloud Storage (GCS) bucket by navigating to [console.developers.google.com](https://console.developers.google.com) > then select **Storage** > **Cloud Storage** > **Browser** > then click **Create Bucket**<br/><br/>
 5. Provide the name of the staging bucket (such as "dataflow-demo", etc) > then click **Create** with the default values.
 
 #### Download Lab Files
