@@ -63,7 +63,7 @@ In this second lab, we'll use the WordCount example included in the [SDK example
 
 ![](https://cloud.githubusercontent.com/assets/8822452/10251339/f680e8f2-68fd-11e5-8fcc-fdbaa29bcf7a.png)<br/><br/>
 11. Once your job completes, navigate back to your GCS staging bucket created earlier and view the output files from the completed Dataflow job.
-![](https://cloud.githubusercontent.com/assets/8822452/10251339/f680e8f2-68fd-11e5-8fcc-fdbaa29bcf7a.png)<br/><br/>
+![](https://cloud.githubusercontent.com/assets/8822452/10251809/7a6cb382-6901-11e5-981c-c39e264b66f7.png)<br/><br/>
 12. This completes Lab exercise 1!
 
 
