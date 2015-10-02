@@ -18,6 +18,10 @@ In this first exercise, we'll configure a Hello World sample to ensure your Data
 
 ![submitted job](https://cloud.google.com/dataflow/images/gs-job-status-done.png)
 
+4. After these steps are completed, create a Google Cloud Storage (GCS) bucket by navigating to [console.developers.google.com](https://console.developers.google.com) > then select **Storage** > **Cloud Storage** > **Browser** > then click **Create Bucket**
+
+5. Provide the name of the staging bucket (such as "dataflow-demo", etc) > then click **Create** with the default values.
+
 #### Download Lab Files
 The final step is to download the lab files required for building the WordCount and Traffic sensor pipelines. 
 
