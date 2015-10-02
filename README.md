@@ -20,10 +20,7 @@ In this first exercise, we'll configure a Hello World sample to ensure your Data
 
 3. The final step is to download the lab files required for building the WordCount and Traffic sensor pipelines. Either clone the repository to your local workstation via:
 
-
-    fdsafdsafsd
-    fadsfsafsda
-
+    git clone https://github.com/evandbrown/jenkins-kube-cd.git
 
 ## Lab Exercise 2: [optional] WorkCount SDK Example
 
@@ -31,25 +28,13 @@ The following example is based off of the Dataflow SDK example [here](https://gi
 
 ### Word Count
 
-In this second lab, we'll use the WordCount example included in the [SDK examples](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/examples/src/main/java/com/google/cloud/dataflow/examples), which computes word frequencies.  This example (along with others are described in detail in the accompanying [walkthrough](https://cloud.google.com/dataflow/examples/wordcount-example).
+In this second lab, we'll use the WordCount example included in the [SDK examples](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/examples/src/main/java/com/google/cloud/dataflow/examples), which computes word frequencies.  This example (along with others) are described in detail in the accompanying [walkthrough](https://cloud.google.com/dataflow/examples/wordcount-example).
 
 [`WordCount`](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/examples/src/main/java/com/google/cloud/dataflow/examples/WordCount.java) introduces Dataflow best practices like [PipelineOptions](https://cloud.google.com/dataflow/pipelines/constructing-your-pipeline#Creating) and custom [PTransforms](https://cloud.google.com/dataflow/model/composite-transforms).
 
 ## Building and Running
 
 1. Drag and drop the 
-
-The examples in this repository can be built and executed from the root directory by running:
-
-    mvn compile exec:java -pl examples \
-    -Dexec.mainClass=<MAIN CLASS> \
-    -Dexec.args="<EXAMPLE-SPECIFIC ARGUMENTS>"
-
-For example, you can execute the `WordCount` pipeline on your local machine as follows:
-
-    mvn compile exec:java -pl examples \
-    -Dexec.mainClass=com.google.cloud.dataflow.examples.WordCount \
-    -Dexec.args="--inputFile=<LOCAL INPUT FILE> --output=<LOCAL OUTPUT FILE>"
 
 Once you have followed the general Cloud Dataflow
 [Getting Started](https://cloud.google.com/dataflow/getting-started) instructions, you can execute
