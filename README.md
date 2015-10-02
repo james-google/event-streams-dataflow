@@ -30,7 +30,7 @@ The final step is to download the lab files required for building the WordCount 
     ```
 or
     
-2. Download via this zipped [file](https://github.com/james-google/event-streams-dataflow/archive/master.zip).
+2. Download via this zipped [file](https://github.com/james-google/event-streams-dataflow/archive/master.zip), and extract to the folder of your choice.
 
 ## Lab Exercise 2: [optional] WorkCount SDK Example
 
@@ -62,7 +62,9 @@ In this second lab, we'll use the WordCount example included in the [SDK example
 10. Click on the first Dataflow job (ordered by most recent in decending order), and you can now view the status and progress of your Dataflow WordCount job.
 
 ![](https://cloud.githubusercontent.com/assets/8822452/10251339/f680e8f2-68fd-11e5-8fcc-fdbaa29bcf7a.png)<br/><br/>
-11. fasfasf
+11. Once your job completes, navigate back to your GCS staging bucket created earlier and view the output files from the completed Dataflow job.
+![](https://cloud.githubusercontent.com/assets/8822452/10251339/f680e8f2-68fd-11e5-8fcc-fdbaa29bcf7a.png)<br/><br/>
+12. This completes Lab exercise 1!
 
 
 
