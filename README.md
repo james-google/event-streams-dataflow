@@ -49,7 +49,9 @@ In this second lab, we'll use the WordCount example included in the [SDK example
 
 ![](https://cloud.githubusercontent.com/assets/8822452/10249927/fe1c3ec0-68f5-11e5-8737-e70c826db6cf.png)<br/><br/>
 3. For a more detailed step-by-step walkthrough, check out the [WordCount Example Pipeline Tutorial](https://cloud.google.com/dataflow/examples/wordcount-example) on the Cloud Dataflow site.<br/><br/>
-4. To run this example, **right-click** on **WordCount.java** > select **Run As** > **Run Configurations...**
+4. To run this example, **right-click** on **WordCount.java** > select **Run As** > **Run Configurations...**<br/><br/>
+5. Select the **SERVICE** option > then the Arguments tab, and enter the following **Program arguments**:
+
 
 ## Beyond Word Count
 
