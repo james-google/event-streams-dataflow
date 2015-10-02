@@ -20,9 +20,7 @@ In this first exercise, we'll configure a Hello World sample to ensure your Data
 
 The final step is to download the lab files required for building the WordCount and Traffic sensor pipelines. Either clone the repository to your local workstation via:
 
-    ```
     git clone https://github.com/james-google/event-streams-dataflow.git
-    ```
 
 or
     
