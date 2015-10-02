@@ -6,6 +6,18 @@
 2. [Install Google Cloud SDK](https://cloud.google.com/sdk/)
 3. Software: Eclipse and JDK (Java development kit). Installation instructions [here](http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/marsr). 
 
+#### Download Lab Files
+The final step is to download the lab files required for building the WordCount and Traffic sensor pipelines. 
+
+1. Either clone the repository to your local workstation via:
+
+    ```
+    $ git clone https://github.com/james-google/event-streams-dataflow.git
+    ```
+or
+    
+2. Download via this zipped [file](https://github.com/james-google/event-streams-dataflow/archive/master.zip), and extract to the folder of your choice.
+
 ## Lab Exercise 1: Hello World with Dataflow
 
 In this first exercise, we'll configure a Hello World sample to ensure your Dataflow environment is up and configured properly. 
@@ -18,19 +30,9 @@ In this first exercise, we'll configure a Hello World sample to ensure your Data
 
 ![submitted job](https://cloud.google.com/dataflow/images/gs-job-status-done.png)<br/><br/>
 4. After these steps are completed, create a Google Cloud Storage (GCS) bucket by navigating to [console.developers.google.com](https://console.developers.google.com) > then select **Storage** > **Cloud Storage** > **Browser** > then click **Create Bucket**.<br/><br/>
-5. Provide the name of the staging bucket such as "dataflow-demo", etc (this will be used in the following examples) > then click **Create** with the default values.
+5. Provide the name of the staging bucket such as "dataflow-demo", etc (this will be used in the following examples) > then click **Create** with the default values.<br/><br/>
+6. You're now done with the first lab!
 
-#### Download Lab Files
-The final step is to download the lab files required for building the WordCount and Traffic sensor pipelines. 
-
-1. Either clone the repository to your local workstation via:
-
-    ```
-    $ git clone https://github.com/james-google/event-streams-dataflow.git
-    ```
-or
-    
-2. Download via this zipped [file](https://github.com/james-google/event-streams-dataflow/archive/master.zip), and extract to the folder of your choice.
 
 ## Lab Exercise 2: [optional] WorkCount SDK Example
 
@@ -64,7 +66,7 @@ In this second lab, we'll use the WordCount example included in the [SDK example
 ![](https://cloud.githubusercontent.com/assets/8822452/10251339/f680e8f2-68fd-11e5-8fcc-fdbaa29bcf7a.png)<br/><br/>
 11. Once your job completes, navigate back to your GCS staging bucket created earlier and view the output files from the completed Dataflow job.
 ![](https://cloud.githubusercontent.com/assets/8822452/10251809/7a6cb382-6901-11e5-981c-c39e264b66f7.png)<br/><br/>
-12. This completes Lab exercise 1!
+12. This completes Lab exercise 2!
 
 
 
