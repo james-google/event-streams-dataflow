@@ -45,7 +45,9 @@ In this second lab, we'll use the WordCount example included in the [SDK example
 1. Drag and drop the **WordCount.java** file from the downloaded lab files into the **source/main/java** folder within your starter project in Eclipse.
 
 ![WordCount.java](https://cloud.githubusercontent.com/assets/8822452/10249692/a6ffe084-68f4-11e5-85c1-2719bc37f207.png) 
-2. fdsfsadf
+2. Scroll down to line 196 and explore how this simple pipeline reads from a file, ....
+
+![](https://cloud.githubusercontent.com/assets/8822452/10249927/fe1c3ec0-68f5-11e5-8737-e70c826db6cf.png)
 
 ## Beyond Word Count
 
