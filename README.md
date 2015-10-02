@@ -59,10 +59,12 @@ In this second lab, we'll use the WordCount example included in the [SDK example
 9. Navigate to [console.developers.google.com](https://console.developers.google.com) > then select **Dataflow** under the **Big Data** section to view the newly launched Dataflow job. <br/><br/>
 10. Click on the first Dataflow job (ordered by most recent in decending order), and you can now view the status and progress of your Dataflow WordCount job.
 
-![]()
+![](https://cloud.githubusercontent.com/assets/8822452/10251339/f680e8f2-68fd-11e5-8fcc-fdbaa29bcf7a.png)<br/><br/>
+11. fasfasf
 
 
-## Beyond Word Count
+
+### Beyond Word Count
 
 After you've finished running your first few word count pipelines, take a look at the [`cookbook`](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/examples/src/main/java/com/google/cloud/dataflow/examples/cookbook)
 directory for some common and useful patterns like joining, filtering, and combining.
@@ -71,5 +73,12 @@ The [`complete`](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/mas
 directory contains a few realistic end-to-end pipelines.
 
 ## Lab Exercise 3: Build out traffic sensor pipeline
+
+In this third lab, we'll construct a traffic IoT sensor sample based on the SDK example [here](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/examples/src/main/java/com/google/cloud/dataflow/examples/complete/TrafficMaxLaneFlow.java).
+
+1. Drag and drop the **TrafficMaxLaneFlow.java** file from the downloaded lab files into the **source/main/java** folder within your starter project in Eclipse.
+
+2. 
+
 
 ## Lab Exercise 4: [optional] Connecting a UI to event streams
