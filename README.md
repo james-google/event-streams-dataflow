@@ -46,7 +46,7 @@ In this second lab, we'll use the WordCount example included in the [SDK example
 
 ### Building and Running
 
-1. Drag and drop the **WordCount.java** file from the downloaded lab files into the **source/main/java** folder within your starter project in Eclipse.
+1. Drag and drop the **WordCount.java** file from the downloaded lab files into the **source/main/java** folder within your starter project in Eclipse, on top of the "com.google.cloud.dataflow.starter" package.
 
 ![WordCount.java](https://cloud.githubusercontent.com/assets/8822452/10249692/a6ffe084-68f4-11e5-85c1-2719bc37f207.png) <br/><br/>
 2. Scroll down to **line 196** and explore how this simple pipeline reads from a file on GCS, tokenizes the text lines into individual words, and then performs a frequency count on each of those words.
@@ -80,7 +80,7 @@ directory contains a few realistic end-to-end pipelines.<br/><br/>
 
 In this third lab, we'll construct a traffic IoT sensor sample based on the SDK example [here](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/examples/src/main/java/com/google/cloud/dataflow/examples/complete/TrafficMaxLaneFlow.java). This example will go beyond using just a static GCS input file, and instead will leverage Pub/Sub, Dataflow and BigQuery to demonstrate an end-to-end real world scenario. 
 
-1. To begin, drag and drop the **TrafficMaxLaneFlow.java** file from the downloaded lab files into the **source/main/java** folder within your starter project in Eclipse.
+1. To begin, drag and drop the **TrafficMaxLaneFlow.java** file from the downloaded lab files into the **source/main/java** folder within your starter project in Eclipse, on top of the "com.google.cloud.dataflow.starter" package.
 
 2. 
 
