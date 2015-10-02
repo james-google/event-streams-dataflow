@@ -41,9 +41,12 @@ In this second lab, we'll use the WordCount example included in the [SDK example
 
 [`WordCount`](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/examples/src/main/java/com/google/cloud/dataflow/examples/WordCount.java) introduces Dataflow best practices like [PipelineOptions](https://cloud.google.com/dataflow/pipelines/constructing-your-pipeline#Creating) and custom [PTransforms](https://cloud.google.com/dataflow/model/composite-transforms).
 
-## Building and Running
+### Building and Running
 
-1. Drag and drop the 
+1. Drag and drop the WordCount.java file from the downloaded lab files into the **source/main/java** folder within your starter project in Eclipse.
+
+[WordCount.java]() 
+
 
 Once you have followed the general Cloud Dataflow
 [Getting Started](https://cloud.google.com/dataflow/getting-started) instructions, you can execute
