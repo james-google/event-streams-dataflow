@@ -17,15 +17,16 @@ In this first exercise, we'll configure a Hello World sample to ensure your Data
 2.  Once you've imported the project (ensure you test on both LOCAL and SERVICE run configurations), you should have the following output in your console:
 
 ![submitted job](https://cloud.google.com/dataflow/images/gs-job-status-done.png)
-3. The final step is to download the lab files required for building the WordCount and Traffic sensor pipelines. Either clone the repository to your local workstation via:
+
+The final step is to download the lab files required for building the WordCount and Traffic sensor pipelines. Either clone the repository to your local workstation via:
 
     ```
     git clone https://github.com/james-google/event-streams-dataflow.git
     ```
-    
+
 or
     
-  Download via this zipped [file](https://github.com/james-google/event-streams-dataflow/archive/master.zip).
+Download via this zipped [file](https://github.com/james-google/event-streams-dataflow/archive/master.zip).
 
 ## Lab Exercise 2: [optional] WorkCount SDK Example
 
