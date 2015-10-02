@@ -3,23 +3,22 @@
 ## Prerequisites
 
 1. A Google Cloud Platform Account - if you don’t have a GCP project, please contact coordinators before the training.
-
-2. Software: Eclipse and JDK (Java development kit). Installation instructions [here](http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/marsr). 
+2. [Install Google Cloud SDK](https://cloud.google.com/sdk/)
+3. Software: Eclipse and JDK (Java development kit). Installation instructions [here](http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/marsr). 
 
 ## Lab Exercise 1: Hello World with Dataflow
 
 In this first exercise, we'll configure a Hello World sample to ensure your Dataflow environment is up and configured properly. 
 
-1. [Install Google Cloud SDK](https://cloud.google.com/sdk/)
+1. Read and execute instructions specified in [Cloud Dataflow Getting Started](https://cloud.google.com/dataflow/getting-started). 
 
-2. Read and execute instructions specified in [Cloud Dataflow Getting Started](https://cloud.google.com/dataflow/getting-started). 
+2. Follow the following set of instructions for the [Dataflow SDK Eclipse Starter Project](https://cloud.google.com/dataflow/getting-started-eclipse) to use as a baseline Java project.
 
-3. Follow the following set of instructions for the [Dataflow SDK Eclipse Starter Project](https://cloud.google.com/dataflow/getting-started-eclipse) to use as a baseline Java project.
-
-4. Once you've imported the project (ensure you test on both LOCAL and SERVICE run configurations), you should have the following output in your console:
+3. Once you've imported the project (ensure you test on both LOCAL and SERVICE run configurations), you should have the following output in your console:
 
 ![submitted job](https://cloud.google.com/dataflow/images/gs-job-status-done.png)
 
+#### Lab Files
 The final step is to download the lab files required for building the WordCount and Traffic sensor pipelines. 
 
 * Either clone the repository to your local workstation via:
