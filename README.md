@@ -88,7 +88,11 @@ In this third lab, we'll construct a traffic IoT sensor sample based on the SDK 
   * ExampleBigQueryTableOptions.java
   * ExamplePubsubTopicOptions.java
   * PubsubFileInjector.java<br/><br/>
-3. Select  
+3. We will now create a Pub/Sub topic in which our traffic sensor event injector code will publish traffic events.<br/><br/>
+4. Go to your **Developer Console** > select **Big Data** > **Pub/Sub** > then click **New Topic**. Enter the desired name for the topic, then click **Create**.<br/><br/>
+![]()<br/><br/>
+5. Next, navigate to **line XXX** where you can see the code leveraged to inject Pub/Sub events via a traffic event stream (events pull off of a San Fransisco set of highways).
+![]()<br/><br/>
 
 
 ## Lab Exercise 4: [optional] Connecting a UI to event streams
