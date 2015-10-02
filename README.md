@@ -52,6 +52,9 @@ In this second lab, we'll use the WordCount example included in the [SDK example
 4. To run this example, **right-click** on **WordCount.java** > select **Run As** > **Run Configurations...**<br/><br/>
 5. Select the **SERVICE** option > then the Arguments tab, and enter the following **Program arguments**:
 
+![](https://cloud.githubusercontent.com/assets/8822452/10250675/4acbb328-68fa-11e5-80ce-5fc00a343aa0.png)<br/><br/>
+6. After you enter the appropriate arguments, click **Run**<br/><br/>
+7. 
 
 ## Beyond Word Count
 
