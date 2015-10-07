@@ -86,7 +86,7 @@ import java.util.List;
 public class TrafficMaxLaneFlow {
 
   static final int WINDOW_DURATION = 60;  // Default sliding window duration in minutes
-  static final int WINDOW_SLIDE_EVERY = 5;  // Default window 'slide every' setting in minutes
+  static final int WINDOW_SLIDE_EVERY = 1;  // Default window 'slide every' setting in minutes
 
   /**
    * This class holds information about each lane in a station reading, along with some general
