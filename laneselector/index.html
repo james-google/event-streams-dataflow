@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Streaming Events Demo</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body onload="auth();">
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Event Streaming Demo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">My Traffic Dashboard</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">My Traffic Dashboard</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">Optimal Lane Selector</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">(Averages for lane speeds every minute)</h5>
+        </div>
+        <div class="row center">
+        <a href="javascript:updateChart();" id="download-button" class="btn-large waves-effect waves-light orange">Refresh</a>
+        </div>
+        <br><br>
+		
+		<br/><br/>
+		
+		
+			<!-- BEGINNING OF UI CODE -->
+		
+		<script language="javascript">
+		   	var PROJECT_ID = 'solid-study-835';
+		        var CLIENT_ID = '427425234127-c87snie06e57ip3mv2tu4r3qgc541l08.apps.googleusercontent.com';
+			//var DATASET_TABLE = '[gtc.laneselector]';	
+		        var DATASET_TABLE = '[dataflow_demo.trafficmaxlaneflow_jameschi_1007170643]';
+			var SCOPES = 'https://www.googleapis.com/auth/bigquery';
+		   	var API_VERSION = 'v2';
+		        //var QUERY = "SELECT AVG(Speed) AS AvgSpeed, Lane, TIME(Timestamp) AS Time, Highway, Direction FROM [gtc.laneselector] WHERE TIMESTAMP_TO_USEC(Timestamp) > NOW()-600000000 GROUP BY Lane, Time, Highway, Direction ORDER BY Time, AvgSpeed DESC, Highway";	
+		        var QUERY = "SELECT AVG(avg_speed) AS avgspeed, lane, TIME(window_timestamp) AS time, freeway, direction, FROM " + DATASET_TABLE + " WHERE TIMESTAMP_TO_USEC(window_timestamp) > NOW()-2400000000 GROUP BY lane, time, freeway, direction ORDER BY time, freeway, direction, avgSpeed DESC";
+			var MAIN_HWY = "94";
+			var MAIN_DIR = "W";
+			var LATEST_QUERY_TIME;
+			var myLineChart;
+			var count = 11;
+      
+		        var config = {
+		                'client_id': CLIENT_ID,
+		                'immediate': false, 
+		                'scope': SCOPES
+		        };
+	
+			function auth() {
+		        	gapi.auth.authorize(config, function() {
+		            		gapi.client.load('bigquery', API_VERSION, runQuery);
+		                });
+		     	}
+
+		      	function runQuery() {
+						$("#loading").show();
+		                var request = gapi.client.bigquery.jobs.query({
+		          		'projectId':PROJECT_ID,
+		                        'timeoutMs': '30000',
+		                        'query': QUERY
+		        	});
+		        	request.execute(function(response) {
+		            	        //alert(response);	
+		                        //alert(JSON.stringify(response.result, null));
+					if(response.result.totalRows == 0) {
+						alert("No rows returned - maybe BigQuery doesn't have data yet?");
+					}
+					else {
+		                 buildChart(response.result.rows);
+						 $("#loading").hide();
+					}	
+		                });
+		      	}
+      	
+			function buildChart(rows) {
+			        var laneColors = ["rgba(220,220,220,1)", "rgba(180,250,100,1)", "rgba(147,196,215,1)", "rgba(87,190,285,1)", "rgba(220,220,220,1)"]; 
+		                var labelsArr = [];
+		                var datasetsArr = []; 
+		                var prevTime;
+				var prevHwyDir;
+				var laneCtr = 0;
+		                $.each(rows, function(i, item) {
+		                        var avgSpeed = item.f[0].v.trim();
+					if(avgSpeed.length > 5) {
+						avgSpeed = avgSpeed.substring(0, 5);
+					}
+		                        var laneStr = item.f[1].v.trim();
+					var lane = parseInt(laneStr.substring(4)); 
+		                        var time = item.f[2].v.trim();
+		                        var highway = item.f[3].v.trim();
+		                        var direction = item.f[4].v.trim();
+					LATEST_QUERY_TIME = time;
+					var curHwyDir = highway+direction;
+					var parentLaneDiv;
+					var hwyTitleClass;
+					var hwyOptLaneClass;
+					var hwySubOptLaneClass;
+
+		                        if(highway == MAIN_HWY && direction == MAIN_DIR) {
+		                               var datasetObj = datasetsArr[lane-1];
+		                               var laneColor = laneColors[lane-1];
+						parentHwyDiv = "mainHwy";
+						hwyTitleClass = "mainHwyTitle";
+						hwyOptLaneClass = "mainOptLane";
+						hwySubOptLaneClass = "mainSubOptLane";   
+		                               if(datasetObj == undefined) {
+		                                       datasetObj = {
+		                                                 label: "Lane " + lane,
+		                                                 fillColor: laneColor,
+		                                                 strokeColor: laneColor,
+		                                                 pointColor: laneColor,
+		                                                 pointStrokeColor: "#fff",
+		                                                 pointHighlightFill: "#fff",
+		                                                 pointHighlightStroke: laneColor,
+		                                                 data: [avgSpeed] 
+		                                       }
+		                                       datasetsArr[lane-1] = datasetObj;
+						}
+		                               else{
+		                                       datasetObj.data.push(avgSpeed);
+		                               }
+		                        }
+					else{
+						parentHwyDiv = "leftTray";
+						hwyTitleClass = "trayHwyTitle";
+		                                hwyOptLaneClass = "trayOptLane";
+		                                hwySubOptLaneClass = "traySubOptLane";
+					}
+		                        console.log(prevHwyDir + " " + prevTime);
+		                        if(curHwyDir == prevHwyDir && time == prevTime) {
+		                                laneCtr++;
+		                        }
+		                        else{
+		                                laneCtr = 0;
+		                        }
+					console.log(laneCtr);
+					var hwyTitleDiv = document.getElementById(curHwyDir + "_title");
+					if(hwyTitleDiv == undefined) {
+						//alert("Highway div for " + highway+direction + " does not exist yet.");
+						document.getElementById(parentHwyDiv).innerHTML += "<div id='" + curHwyDir + "_title' class='" + hwyTitleClass + "'>Hwy " + curHwyDir + "</div>" +
+													"<div id='" + curHwyDir + "_lanes' class='hwyLanes'>" +
+													"<div id='" + curHwyDir + "_lane_" + laneCtr + "' class='" + hwyOptLaneClass + "'>Lane " + lane + " (" + avgSpeed + " mph)</div>";	
+													"</div>";
+					}
+					else{
+						//alert("Highway div for " + highway+direction + " exists!");
+						var laneDiv = document.getElementById(curHwyDir + "_lane_" + laneCtr);
+						if(laneDiv == undefined) {
+							document.getElementById(curHwyDir + "_lanes").innerHTML += "<div id='" + curHwyDir + "_lane_" + laneCtr + "' class='" + hwySubOptLaneClass + "'>Lane " + lane + " (" + avgSpeed + " mph)</div>";
+						}
+						else{
+							laneDiv.innerHTML = "Lane " + lane + " (" + avgSpeed + " mph)";
+						}
+					}
+		                        //Time is ordered by the query results.
+		                        if(time != prevTime) {
+		                                labelsArr.push(time + " UTC");
+		                        }
+					prevTime = time;
+					prevHwyDir = curHwyDir;
+		                });
+		                var ctx = document.getElementById("myChart").getContext("2d");
+				var data = {
+		    			labels: labelsArr,
+		    			datasets: datasetsArr 
+				};
+				myLineChart = new Chart(ctx).Line(data, {
+						legendTemplate : "<% for (var i=0; i<datasets.length; i++){%><span style=\"background-color:<%=datasets[i].strokeColor%>;margin-left:10px;border:1px solid #000000;padding:2px;\"><%if(datasets[i].label){%><%=datasets[i].label%><%}%></span><%}%>",
+						datasetFill : false,
+						scaleLabel: "<%=value%> mph",
+						multiTooltipTemplate: "<%= value %> mph"
+					});
+				document.getElementById("legend").innerHTML = myLineChart.generateLegend();
+				//alert(myLineChart.generateLegend());
+			}
+
+			function populateLanes(hwy, dir) {
+				var titleClass;
+				var optLaneClass;
+				var subOptLaneClass;
+				if(hwy == MAIN_HWY && dir == MAIN_DIR) {
+					titleClass = "mainHwyTitle";
+					optLaneClass = "mainOptLane";
+					subOptLaneClass = "mainSubOptLane";
+				}
+				else {
+					titleClass = "trayHwyTitle";
+					optLaneClass = "trayOptLane";
+					subOptLaneClass = "traySubOptLane";
+				}
+			}
+
+			function updateChart() {
+				$("#loading").show();
+		                var UPDATE_QUERY = "SELECT AVG(avg_speed) AS avgspeed, lane, TIME(window_timestamp) AS time, freeway, direction FROM " + DATASET_TABLE + " WHERE TIMESTAMP_TO_USEC(window_timestamp) > NOW()-2400000000 AND freeway = '" + MAIN_HWY + "' AND direction = '" + MAIN_DIR + "' GROUP BY lane, time, freeway, direction ORDER BY time, freeway, direction, avgSpeed DESC";
+				//alert(UPDATE_QUERY);
+				var request = gapi.client.bigquery.jobs.query({
+		                        'projectId':PROJECT_ID,
+		                        'timeoutMs': '30000',
+		                        'query': UPDATE_QUERY
+		                });
+		                request.execute(function(response) {
+		                        //alert(response.result.totalRows);
+					var totalRows = parseInt(response.result.totalRows);
+		                        if(response != undefined && response.result != undefined && totalRows > 0) {
+						var newData = [];
+						var timeFlag = false;
+						var doAddData = false;
+						var time;
+						var laneCtr = 0;
+						var rows = response.result.rows;
+						$.each(rows, function(i, item) {	                        
+							var avgSpeed = item.f[0].v.trim();
+		                        		if(avgSpeed.length > 5) {
+		                                		avgSpeed = avgSpeed.substring(0, 5);
+		                        		}
+		                        		var laneStr = item.f[1].v.trim();
+		                        		var lane = parseInt(laneStr.substring(4));
+		                        		time = item.f[2].v.trim();
+		                        		var highway = item.f[3].v.trim();
+		                        		var direction = item.f[4].v.trim();
+							//alert("time: " + time + ", LATEST_QUERY_TIME: " + LATEST_QUERY_TIME);
+							if(time == LATEST_QUERY_TIME) {
+								//alert("setting time flag to true.");
+								timeFlag = true;
+							}
+							else if(time != LATEST_QUERY_TIME && timeFlag == true) {
+								//alert("setting doAddData to true and updating labels");
+								doAddData = true;
+								newData[lane-1] = avgSpeed;
+								document.getElementById(highway + direction + "_lane_" + laneCtr).innerHTML = "Lane " + lane + " (" + avgSpeed + " mph)";
+								laneCtr++;
+							}
+						});
+						if(doAddData == true) {
+							//alert("updating chart.");
+							myLineChart.addData(newData, time + " UTC");
+							if(totalRows >= 27) {
+								myLineChart.removeData();
+							}
+							LATEST_QUERY_TIME = time;
+						}
+					}
+		                        //buildChart(response.result.rows);
+							$("#loading").hide();
+		                });	
+			}
+	
+			setInterval(updateChart, 30*1000);
+			</script>
+			
+			
+			<!-- END OF UI CODE -->
+
+      </div>
+    </div>
+    <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row" style="align:center;">            
+			
+			<!-- Traffic sensor charts -->
+			<div id="wrapper">
+				
+				<div class="preloader-wrapper medium active" id="loading">
+				    <div class="spinner-layer spinner-blue-only">
+				      <div class="circle-clipper left">
+				        <div class="circle"></div>
+				      </div><div class="gap-patch">
+				        <div class="circle"></div>
+				      </div><div class="circle-clipper right">
+				        <div class="circle"></div>
+				      </div>
+				    </div>
+				  </div>
+				
+				<div id="leftTray"></div>
+				<div id="mainBody">
+					<div id="mainHwy"></div>
+					<div id="mainHwyTitle" class="mainHwyTitle"></div>
+					<div id="mainHwyLanes" class="mainHwyLanes"></div>
+					<div><canvas id="myChart" width="520" height="350" style="padding:10px;"></canvas></div>
+					<div id="legend"></div>
+				</div>
+			</div>
+			
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Contact Us</h4>
+          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Stypes -->
+	<style type="text/css">
+		#wrapper {
+		}
+		#leftTray {
+			float: left;
+			width:140px;
+			margin-right:15px;
+			border-right:1px solid #000000;
+		}
+		#mainBody {
+			width:75%;
+			text-align:center;
+			float: left;
+		}
+		.trayHwyTitle {
+			font-size: 16pt;
+			text-decoration: underline;
+			font-weight: bold;
+			padding-bottom: 5px;
+		}
+		.hwyLanes {
+			padding-bottom: 20px;	
+		}
+		.trayOptLane {
+			color: green;
+			font-size: 12pt;
+			font-weight: bold;	
+		}
+		.traySubOptLane {
+			color: red;
+			font-size: 10pt;
+		}
+		.mainHwyTitle {
+			font-size: 20pt;
+			text-decoration: underline;
+			font-weight: bold;
+			padding-bottom: 5px;
+		}
+		.mainOptLane {
+			color: green;
+			font-size: 18pt;
+			font-weight: bold;	
+		}
+		.mainSubOptLane {
+			color: red;
+			font-size: 14pt;
+		}
+		#pageTitle {
+			text-align: center;
+			font-size: 24pt;
+			font-weight: bold;	/Applications
+		}
+		#subTitle {
+			padding-bottom: 30px;
+		}
+		#legend {
+			padding-top:20px;	
+		}
+	</style>
+
+  <!--  Scripts-->
+  <script src="https://apis.google.com/js/client.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="Chart.min.js"></script>
+  <!--script src="https://code.jquery.com/jquery-2.1.1.min.js"></script-->
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
