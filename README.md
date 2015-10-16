@@ -123,17 +123,18 @@ Once you've updated the arguments, and you've selected the appropriate class > t
 1. Open up a web browser and navigate to the developer console for your project. Click the **Cloud Launcher** link on the left side of the screen. <br/>
 <img width="265" alt="4 1" src="https://cloud.githubusercontent.com/assets/8822452/10545740/3c6a79a0-73f8-11e5-9e2a-6ef7030cc548.png">
 
-2. On the Cloud Launcher screen, search for **LAMP**, and then choose **LAMP Stack (Google Click to Deploy)**.
-
-3. On the **LAMP Stack** screen, click the Launch on Compute Engine button.
-
-4. On the Click to **Deploy LAMP Stack** screen, leave all the settings as they are by default and click the Deploy LAMP Stack button. The deployment will take 2-3 minutes to complete.
-
-5. Once the server has been deployed correctly you will be brought to a page that says **Your LAMP Stack deployment is ready**. On that page you will see the **External IP** for your instance. Click the external IP address which will bring up a prompt to enable HTTP traffic
-
-6. On the pop-up window, check the box to **Allow HTTP traffic** and click the **Apply** button.
-
-7. Connect to your instance by clicking the SSH link.
+2. On the Cloud Launcher screen, search for **LAMP**, and then choose **LAMP Stack (Google Click to Deploy)**. <br/>
+<img width="752" alt="4 2" src="https://cloud.githubusercontent.com/assets/8822452/10545739/3c6a0042-73f8-11e5-9da4-f37fa6691d05.png">
+3. On the **LAMP Stack** screen, click the Launch on Compute Engine button. <br/>
+<img width="547" alt="4 3" src="https://cloud.githubusercontent.com/assets/8822452/10545744/3c6e6c90-73f8-11e5-86ab-af2ab182fc2f.png">
+4. On the Click to **Deploy LAMP Stack** screen, leave all the settings as they are by default and click the Deploy LAMP Stack button. The deployment will take 2-3 minutes to complete. <br/>
+<img width="541" alt="4 4" src="https://cloud.githubusercontent.com/assets/8822452/10545741/3c6c057c-73f8-11e5-98c6-33a439da01fe.png">
+5. Once the server has been deployed correctly you will be brought to a page that says **Your LAMP Stack deployment is ready**. On that page you will see the **External IP** for your instance. Click the external IP address which will bring up a prompt to enable HTTP traffic. <br/>
+<img width="481" alt="4 5" src="https://cloud.githubusercontent.com/assets/8822452/10545743/3c6d9a22-73f8-11e5-9a1d-4d674790be97.png">
+6. On the pop-up window, check the box to **Allow HTTP traffic** and click the **Apply** button. <br/>
+<img width="463" alt="4 6" src="https://cloud.githubusercontent.com/assets/8822452/10545742/3c6d2560-73f8-11e5-9479-2c80af3eec95.png">
+7. Connect to your instance by clicking the SSH link. <br/>
+<img width="443" alt="4 7" src="https://cloud.githubusercontent.com/assets/8822452/10545745/3c74e4c6-73f8-11e5-860c-2aaadf6a5d6d.png">
 8. An SSH window will open. In that window, navigate to the /var/www/html folder with the following command: <br/>```cd /var/www/html``` 
 <br/>
 <img width="479" alt="4 8" src="https://cloud.githubusercontent.com/assets/8822452/10545746/3c771c00-73f8-11e5-8f0a-a49ea594180a.png">
