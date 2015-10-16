@@ -107,7 +107,20 @@ _**NOTE**: You will need to update your package name in each class file from **â
  --numWorkers=3
 ```
 Once you've updated the arguments, and you've selected the appropriate class > then click **Run**.
-7. Similar to the first lab, navigate to **Dataflow** via the Developer Console, and select the **trafficmaxlaneflow-YOUR-INFO-HERE-injector** pipeline. This is the injector pipeline that is pulling each line from the San Diego traffic sensor CSV file from GCS, and is pushing each event directly into Pub/Sub via the topic we created earlier.
+7. Similar to the first lab, navigate to **Dataflow** via the Developer Console, and select the **trafficmaxlaneflow-YOUR-INFO-HERE-injector** pipeline. This is the injector pipeline that is pulling each line from the San Diego traffic sensor CSV file from GCS, and is pushing each event directly into Pub/Sub via the topic we created earlier.<br/><br/>
+8. Click on the **TextIO.Read** node in the Dataflow UI, and you'll see live statistics of Pub/Sub messages:
+<br/>
+9. Click on the **Job Log** tab and you can expand each node to see how Dataflow is spinning up GCE instances to process the data pipeline. Toggle to **Detailed** mode and you can drill down even further. <br/><br/>
+10. Now go back to your list of dataflow jobs and select your active streaming job. Click on the PubsubIO.Read node in the UI and note the **Elements Added** amount trickling in events from our injector pipeline.<br/><br/>
+11. To view the output of your Dataflow pipeline, click on **BigQuery** in the Developer Console. <br/><br/>
+12. Select the dataset already created from Dataflow via the name we passed as the 
+```--bigQueryDataset=dataflow_demo``` parameter > click the new table created from Dataflow in the left panel > then click the **Query** Table button.<br/><br/>
+13. Add a * for your select query statement to see if Dataflow has started to inject the event streams into your BigQuery dataset. Make sure and also select **Show Options** and de-select the **Use Cached** Results option to ensure our data is pulling the latest info for each query. <br/><br/>
+14.  Click the **Run Query** button to execute the query. It may take a couple minutes for the first events to start showing up, but you will begin to see your events streaming into your BigQuery table. <br/><br/> 
+15. You've now successfully built an end-to-end event stream data pipeline using Pub/Sub, Dataflow and Bigquery!
+
+
+
 
 
 ## Lab Exercise 4: [optional] Connecting a UI to event streams
