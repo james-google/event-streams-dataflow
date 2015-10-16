@@ -63,11 +63,12 @@ _**NOTE**: You will need to update your package name in each class file from **�
 6. Click **“Search…”** button under the **Main** tab.<br/><br/>
 7. Type in **"WordCount"** and select the appropriate class > then **OK**.<br/><br/>
 8. Click the **“Pipeline Arguments”** tab, select the **“BlockingDataflowPipelineRunner”** option (this will allow us to run the pipeline in GCP), enter your **“Cloud Platform Project ID”** and specify the **“Cloud Storage Staging Location”** via the drop-down > then click **“Apply”**:<br/><br/>
-9. Navigate to [console.developers.google.com](https://console.developers.google.com) > then select **Dataflow** under the **Big Data** section to view the newly launched Dataflow job. <br/><br/>
-10. Click on the first Dataflow job (ordered by most recent in decending order), and you can now view the status and progress of your Dataflow WordCount job.
+9. After you enter the appropriate arguments, click **Run**.<br/><br/>
+10. Navigate to [console.developers.google.com](https://console.developers.google.com) > then select **Dataflow** under the **Big Data** section to view the newly launched Dataflow job. <br/><br/>
+11. Click on the first Dataflow job (ordered by most recent in decending order), and you can now view the status and progress of your Dataflow WordCount job.
 
 ![](https://cloud.githubusercontent.com/assets/8822452/10251339/f680e8f2-68fd-11e5-8fcc-fdbaa29bcf7a.png)<br/><br/>
-11. Once your job completes, navigate back to your GCS staging bucket created earlier and view the output files from the completed Dataflow job.
+12. Once your job completes, navigate back to your GCS staging bucket created earlier and view the output files from the completed Dataflow job.
 ![](https://cloud.githubusercontent.com/assets/8822452/10251809/7a6cb382-6901-11e5-981c-c39e264b66f7.png)<br/><br/>
 
 ### Beyond Word Count
