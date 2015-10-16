@@ -26,15 +26,12 @@ In this first exercise, we'll configure a Hello World sample to ensure your Data
 
 2. Once you've imported the project, you should have the following Pipeline arguments within Eclipse: <br/><br/>
 <img width="782" alt="lab__build_an_event_streams_pipeline_with_pub_sub__dataflow_and_bigquery_-_google_docs" src="https://cloud.githubusercontent.com/assets/8822452/10541417/e45b4d20-73de-11e5-936e-9fc7b7d0e2e1.png"> 
-<br/><br/>
-When the execution finishes, among other output, the console should contain the statement Submitted job: *<job_id>*.
+<br/>
+When the execution finishes, among other output, the console should contain the statement Submitted job: **"your_job_id"**.
 
-3. Once you've imported the project (ensure you test on both LOCAL and SERVICE run configurations), you should have the following output in your console:
-
-![submitted job](https://cloud.google.com/dataflow/images/gs-job-status-done.png)<br/><br/>
-4. After these steps are completed, create a Google Cloud Storage (GCS) bucket by navigating to [console.developers.google.com](https://console.developers.google.com) > then select **Storage** > **Cloud Storage** > **Browser** > then click **Create Bucket**.<br/><br/>
-5. Provide the name of the staging bucket such as "dataflow-demo", etc (this will be used in the following examples) > then click **Create** with the default values.<br/><br/>
-6. You're now done with the first lab!
+3. After these steps are completed, create a Google Cloud Storage (GCS) bucket by navigating to [console.developers.google.com](https://console.developers.google.com) > then select **Storage** > **Cloud Storage** > **Browser** > then click **Create Bucket**.<br/><br/>
+4. Provide the name of the staging bucket such as "dataflow-demo", etc (this will be used in the following examples) > then click **Create** with the default values.<br/><br/>
+5. You're now done with the first lab!
 
 
 ## Lab Exercise 2: [optional] WorkCount SDK Example
