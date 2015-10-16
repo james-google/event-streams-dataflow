@@ -34,7 +34,7 @@ When the execution finishes, among other output, the console should contain the 
 5. You're now done with the first lab!
 
 
-## Lab Exercise 2: [optional] WorkCount SDK Example
+## Lab Exercise 2: [optional] WordCount SDK Example
 
 The following example is based off of the Dataflow SDK example [here](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/tree/master/examples) and will serve to demonstrate the basic functionality of Google Cloud Dataflow, and act as starting points for the development of more complex pipelines.
 
