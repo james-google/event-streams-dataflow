@@ -30,7 +30,7 @@ In this first exercise, we'll configure a Hello World sample to ensure your Data
 When the execution finishes, among other output, the console should contain the statement Submitted job: **"your_job_id"**.
 
 3. After these steps are completed, create a Google Cloud Storage (GCS) bucket by navigating to [console.developers.google.com](https://console.developers.google.com) > then select **Storage** > **Cloud Storage** > **Browser** > then click **Create Bucket**.
-4. Provide the name of the staging bucket such as "dataflow-demo", etc (this will be used in the following examples) > then click **Create** with the default values.<br/><br/>
+4. Provide the name of the staging bucket such as "dataflow-demo", etc (this will be used in the following examples) > then click **Create** with the default values.
 5. You're now done with the first lab!
 
 
