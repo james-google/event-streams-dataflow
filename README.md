@@ -24,7 +24,10 @@ In this first exercise, we'll configure a Hello World sample to ensure your Data
 
 1. Read and execute instructions specified in [Cloud Dataflow Getting Started](https://cloud.google.com/dataflow/getting-started-eclipse). 
 
-2. Once you've imported the project, you should have the following Pipeline arguments within Eclipse:
+2. Once you've imported the project, you should have the following Pipeline arguments within Eclipse: <br/><br/>
+<img width="782" alt="lab__build_an_event_streams_pipeline_with_pub_sub__dataflow_and_bigquery_-_google_docs" src="https://cloud.githubusercontent.com/assets/8822452/10541417/e45b4d20-73de-11e5-936e-9fc7b7d0e2e1.png"> 
+<br/><br/>
+When the execution finishes, among other output, the console should contain the statement Submitted job: *<job_id>*.
 
 3. Once you've imported the project (ensure you test on both LOCAL and SERVICE run configurations), you should have the following output in your console:
 
