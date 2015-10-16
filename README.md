@@ -135,7 +135,8 @@ Once you've updated the arguments, and you've selected the appropriate class > t
 
 7. Connect to your instance by clicking the SSH link.
 8. An SSH window will open. In that window, navigate to the /var/www/html folder with the following command: <br/>```cd /var/www/html``` 
-
+<br/>
+<img width="479" alt="4 8" src="https://cloud.githubusercontent.com/assets/8822452/10545746/3c771c00-73f8-11e5-8f0a-a49ea594180a.png">
 9. Authenticate within your GCE VM by entering:
 sudo gcloud auth login
 
@@ -145,12 +146,12 @@ sudo gcloud auth login
 sudo gcloud config set project <YOUR-PROJECT-ID>
 
 12. Run the following command to download the UI:
- sudo gsutil cp -r gs://gtc_event_stream/laneselector ./  
-
-13. Now you will need to create client credentials for the UI. Start by navigating to the developer console, and under the **APIs & auth** link, click the **Credentials** link.
-
-14. From the Credentials screen, click the **Add credentials** button and select **OAuth 2.0 client ID**. 
-
+ sudo gsutil cp -r gs://gtc_event_stream/laneselector ./  <br/>
+<img width="775" alt="4 12" src="https://cloud.githubusercontent.com/assets/8822452/10545747/3c7790ae-73f8-11e5-8a5c-40987da8e8db.png">
+13. Now you will need to create client credentials for the UI. Start by navigating to the developer console, and under the **APIs & auth** link, click the **Credentials** link. <br/>
+<img width="250" alt="4 13" src="https://cloud.githubusercontent.com/assets/8822452/10545748/3c78dfcc-73f8-11e5-80e2-e72d44a7d723.png">
+14. From the Credentials screen, click the **Add credentials** button and select **OAuth 2.0 client ID**. <br/>
+<img width="510" alt="4 14" src="https://cloud.githubusercontent.com/assets/8822452/10545750/3c7b6634-73f8-11e5-9053-c3462e60935b.png">
 15. On the **Create client ID** page, select **Web Application**. When prompted, enter “Lane Selector Client” in the **Name** field. In the **Authorized Javascript** origins field, enter “http://INSTANCE_IP_ADDRESS” where INSTANCE_IP_ADDRESS is the external IP address from Step 5. Finally, click the **Create** button.<br/>
 <img width="525" alt="4 15" src="https://cloud.githubusercontent.com/assets/8822452/10545749/3c7a777e-73f8-11e5-87cf-e4122868860e.png">
 16. You will be prompted with information about your newly created OAuth client. Make a note of the client ID as you will need it in subsequent steps.
