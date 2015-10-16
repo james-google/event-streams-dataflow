@@ -60,9 +60,11 @@ _**NOTE**: You will need to update your package name in each class file from **�
 3. For a more detailed step-by-step walkthrough, check out the [WordCount Example Pipeline Tutorial](https://cloud.google.com/dataflow/examples/wordcount-example) on the Cloud Dataflow site.<br/><br/>
 4. To run this example, **right-click** on **WordCount.java** > select **Run As** > **Run Configurations...**<br/><br/>
 5. Next, select the **“Dataflow Pipeline”** option > then press the **“New”** button to create a configuration of the selected type: <br/><br/>
+<img width="792" alt="lab__build_an_event_streams_pipeline_with_pub_sub__dataflow_and_bigquery_-_google_docs2 1" src="https://cloud.githubusercontent.com/assets/8822452/10541886/53a2d9ac-73e2-11e5-9ee9-24ca07569a39.png"><br/>
 6. Click **“Search…”** button under the **Main** tab.<br/><br/>
 7. Type in **"WordCount"** and select the appropriate class > then **OK**.<br/><br/>
 8. Click the **“Pipeline Arguments”** tab, select the **“BlockingDataflowPipelineRunner”** option (this will allow us to run the pipeline in GCP), enter your **“Cloud Platform Project ID”** and specify the **“Cloud Storage Staging Location”** via the drop-down > then click **“Apply”**:<br/><br/>
+<img width="794" alt="lab__build_an_event_streams_pipeline_with_pub_sub__dataflow_and_bigquery_-_google_docs2 2" src="https://cloud.githubusercontent.com/assets/8822452/10541890/5b4437dc-73e2-11e5-9228-4cde7ac44776.png"><br/>
 9. After you enter the appropriate arguments, click **Run**.<br/><br/>
 10. Navigate to [console.developers.google.com](https://console.developers.google.com) > then select **Dataflow** under the **Big Data** section to view the newly launched Dataflow job. <br/><br/>
 11. Click on the first Dataflow job (ordered by most recent in decending order), and you can now view the status and progress of your Dataflow WordCount job.
