@@ -153,10 +153,12 @@ sudo gcloud config set project <YOUR-PROJECT-ID>
 15. On the **Create client ID** page, select **Web Application**. When prompted, enter “Lane Selector Client” in the **Name** field. In the **Authorized Javascript** origins field, enter “http://INSTANCE_IP_ADDRESS” where INSTANCE_IP_ADDRESS is the external IP address from Step 5. Finally, click the **Create** button.
 
 16. You will be prompted with information about your newly created OAuth client. Make a note of the client ID as you will need it in subsequent steps.
-
-17. Go back to the SSH window for your instance from step 8. Open up the Nano editor to edit the index.html file in the laneselector folder you downloaded in step 9 with the following command: 
- sudo nano /var/www/html/laneselector/index.html  
-18. The nano text editor will open. Scroll down the page until you find the **PROJECT_ID**, **CLIENT_ID**, and **DATASET_TABLE** JavaScript variables. Change the values of these three variables to match your project ID, the client ID you created in step 13, and the dataset and table name created by Cloud Dataflow. Hit Ctrl-x when finished and save the file when prompted. 
+<img width="645" alt="4 16" src="https://cloud.githubusercontent.com/assets/8822452/10545751/3c7f5f00-73f8-11e5-843f-83b9bce90496.png"><br/><br/>
+17. Go back to the SSH window for your instance from step 8. Open up the Nano editor to edit the index.html file in the laneselector folder you downloaded in step 9 with the following command: <br/>
+```sudo nano /var/www/html/laneselector/index.html  ```
+<img width="776" alt="4 17" src="https://cloud.githubusercontent.com/assets/8822452/10545752/3c8251ec-73f8-11e5-9181-2ac84f22a75e.png"><br/><br/>
+18. The nano text editor will open. Scroll down the page until you find the **PROJECT_ID**, **CLIENT_ID**, and **DATASET_TABLE** JavaScript variables. Change the values of these three variables to match your project ID, the client ID you created in step 13, and the dataset and table name created by Cloud Dataflow. Hit Ctrl-x when finished and save the file when prompted. <br/>
+<img width="793" alt="4 18" src="https://cloud.githubusercontent.com/assets/8822452/10545753/3c858dd0-73f8-11e5-9c36-0fa442bb251e.png"><br/><br/>
 19. In a web browser on your local machine, go to http://INSTANCE_IP_ADDRESS/laneselector/index.html, where INSTANCE_IP_ADDRESS is the external IP address of your instance from step 5. You will be prompted to allow the application access to Google BigQuery. Click the Allow button and you should see the UI.<br/><br/>
 <img width="809" alt="3 1" src="https://cloud.githubusercontent.com/assets/8822452/10545205/84e8b53c-73f5-11e5-8213-f54eee12f927.png">
 
