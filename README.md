@@ -151,3 +151,12 @@ sudo gcloud config set project <YOUR-PROJECT-ID>
 18. The nano text editor will open. Scroll down the page until you find the PROJECT_ID, CLIENT_ID, and DATASET_TABLE JavaScript variables. Change the values of these three variables to match your project ID, the client ID you created in step 13, and the dataset and table name created by Cloud Dataflow. Hit Ctrl-x when finished and save the file when prompted. 
 19. In a web browser on your local machine, go to http://INSTANCE_IP_ADDRESS/laneselector/index.html, where INSTANCE_IP_ADDRESS is the external IP address of your instance from step 5. You will be prompted to allow the application access to Google BigQuery. Click the Allow button and you should see the UI.
 
+## Clean up
+These steps are important as you'll be charged for your active Dataflow jobs, BigQuery datasets and GCE instances leveraged for the UI lab.
+
+1. Navigate to your **Developer Console** > select **Big Data** > **Cloud Dataflow**. Click on any job with an **Active** status > then click **Cancel job**.
+2. Now click on **Storage** > **Cloud Storage** > **Browser**. Select the bucket you created for the Dataflow staging location and click **Delete**.
+3. Navigate to **Compute** > **Compute Engine** > **VM Instances**. Select the **lamp1-lamp** (or whichever LAMP instance name you designated for your UI lab) and click **Delete**.
+4. To remove your BigQuery datasets, go to **Big Data** > click on the **BigQuery** link to view the BigQuery UI. Select the drop-down next to the **trafficmaxlaneflow_YOUR-INFO** dataset and select **Delete table**.
+
+
