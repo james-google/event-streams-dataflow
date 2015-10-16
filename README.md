@@ -93,8 +93,8 @@ In this third lab, we'll construct a traffic IoT sensor sample based on the SDK 
   * ExamplePubsubTopicOptions.java
   * PubsubFileInjector.java<br/><br/>
 _**NOTE**: You will need to update your package name in each class file from **“com.google.cloud.dataflow.starter”** to the package name you created when setting up the Eclipse Dataflow project in Step 1 of Lab 1._ <br/><br/>
-2. We will now create a Pub/Sub topic in which our traffic sensor event injector code will publish traffic events.<br/>
-3. Go to your **Developer Console** > select **Big Data** > **Pub/Sub** > then click **New Topic**. Enter the desired name for the topic, then click **Create**.<br/><br/>
+2. We will now create a Pub/Sub topic in which our traffic sensor event injector code will publish traffic events.<br/><br/>
+3. Go to your **Developer Console** > select **Big Data** > **Pub/Sub** > then click **New Topic**. Enter the desired name for the topic, then click **Create**.<br/>
 <img width="562" alt="pub_sub_topics_-_james_demo_project" src="https://cloud.githubusercontent.com/assets/8822452/10254291/af417610-6910-11e5-9a34-f312b7d1f904.png"><br/><br/> 
 4. Next, navigate to line 327 in the TrafficMaxLaneFlow.java file where you can see the pipleline creation code leveraged to inject Pub/Sub events via a traffic event stream (events are real traffic [sensor data](http://www.dot.ca.gov/dist11/d11tmc/sdmap/showmap.php) from San Diego freeways).<br/><br/>
 5. For this example, the **TrafficMaxLaneFlowOptions** interface is setting the project up to pull known traffic sensor events from a shared GCS bucket, and you can download the CSV files to view the raw data. As you can see, compared to the WordCount lab this pipeline has options for streaming data from Pub/Sub, and on **line 338** we are using a utility class to set up our Pub/Sub topic as well as our desired output BigQuery table. <br/><br/>
