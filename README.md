@@ -133,16 +133,20 @@ On the Click to Deploy LAMP Stack screen, leave all the settings as they are by 
 
 9. Authenticate within your GCE VM by entering:
 sudo gcloud auth login
+
 10. Follow the instructions to open a browser for authentication > select your Google account and paste the authentication code in the VM shell window.
+
 11. Set your default project by entering:
 sudo gcloud config set project <YOUR-PROJECT-ID>
+
 12. Run the following command to download the UI:
  sudo gsutil cp -r gs://gtc_event_stream/laneselector ./  
-13. Now you will need to create client credentials for the UI. Start by navigating to the developer console, and under the APIs & auth link, click the Credentials link.
 
-14. From the Credentials screen, click the Add credentials button and select OAuth 2.0 client ID. 
+13. Now you will need to create client credentials for the UI. Start by navigating to the developer console, and under the **APIs & auth** link, click the **Credentials** link.
 
-15. On the Create client ID page, select Web Application. When prompted, enter “Lane Selector Client” in the Name field. In the Authorized Javascript origins field, enter “http://INSTANCE_IP_ADDRESS” where INSTANCE_IP_ADDRESS is the external IP address from Step 5. Finally, click the Create button.
+14. From the Credentials screen, click the **Add credentials** button and select **OAuth 2.0 client ID**. 
+
+15. On the **Create client ID** page, select **Web Application**. When prompted, enter “Lane Selector Client” in the **Name** field. In the **Authorized Javascript** origins field, enter “http://INSTANCE_IP_ADDRESS” where INSTANCE_IP_ADDRESS is the external IP address from Step 5. Finally, click the **Create** button.
 
 16. You will be prompted with information about your newly created OAuth client. Make a note of the client ID as you will need it in subsequent steps.
 
@@ -157,9 +161,13 @@ sudo gcloud config set project <YOUR-PROJECT-ID>
 These steps are important as you'll be charged for your active Dataflow jobs, BigQuery datasets and GCE instances leveraged for the UI lab.
 
 1. Navigate to your **Developer Console** > select **Big Data** > **Cloud Dataflow**. Click on any job with an **Active** status > then click **Cancel job**.
+
 2. Now click on **Storage** > **Cloud Storage** > **Browser**. Select the bucket you created for the Dataflow staging location and click **Delete**.
+
 3. Navigate to **Compute** > **Compute Engine** > **VM Instances**. Select the **lamp1-lamp** (or whichever LAMP instance name you designated for your UI lab) and click **Delete**.
+
 4. Go to **Big Data** > **Pub/Sub** > click the topic created via Lab 3, step 3 and click **Delete**.
+
 5. To remove your BigQuery datasets, go to **Big Data** > click on the **BigQuery** link to view the BigQuery UI. Select the drop-down next to the **trafficmaxlaneflow_YOUR-INFO** dataset and select **Delete table**.
 
 
