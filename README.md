@@ -95,7 +95,7 @@ In this third lab, we'll construct a traffic IoT sensor sample based on the SDK 
 _**NOTE**: You will need to update your package name in each class file from **“com.google.cloud.dataflow.starter”** to the package name you created when setting up the Eclipse Dataflow project in Step 1 of Lab 1._ <br/><br/>
 2. We will now create a Pub/Sub topic in which our traffic sensor event injector code will publish traffic events.<br/><br/>
 3. Go to your **Developer Console** > select **Big Data** > **Pub/Sub** > then click **New Topic**. Enter the desired name for the topic, then click **Create**.<br/>
-<img width="562" alt="pub_sub_topics_-_james_demo_project" src="https://cloud.githubusercontent.com/assets/8822452/10254291/af417610-6910-11e5-9a34-f312b7d1f904.png"><br/><br/> 
+<img width="562" alt="pub_sub_topics_-_james_demo_project" src="https://cloud.githubusercontent.com/assets/8822452/10254291/af417610-6910-11e5-9a34-f312b7d1f904.png"><br/>
 4. Next, navigate to line 327 in the TrafficMaxLaneFlow.java file where you can see the pipleline creation code leveraged to inject Pub/Sub events via a traffic event stream (events are real traffic [sensor data](http://www.dot.ca.gov/dist11/d11tmc/sdmap/showmap.php) from San Diego freeways).<br/><br/>
 5. For this example, the **TrafficMaxLaneFlowOptions** interface is setting the project up to pull known traffic sensor events from a shared GCS bucket, and you can download the CSV files to view the raw data. As you can see, compared to the WordCount lab this pipeline has options for streaming data from Pub/Sub, and on **line 338** we are using a utility class to set up our Pub/Sub topic as well as our desired output BigQuery table. <br/><br/>
 6. Repeat steps 4-7 from Lab 2, this time selecting the **TrafficMaxLaneFlow.java** class, and update the run configuration parameters with the following:
@@ -106,10 +106,10 @@ _**NOTE**: You will need to update your package name in each class file from **�
  --pubsubTopic=projects/<ENTER-YOUR-PROJECT-ID>/topics/<ENTER-TOPIC-NAME-STEP-3>
  --numWorkers=3
 ```
-Once you've updated the arguments, and you've selected the appropriate class > then click **Run**.
+Once you've updated the arguments, and you've selected the appropriate class > then click **Run**.<br/><br/>
 7. Similar to the first lab, navigate to **Dataflow** via the Developer Console, and select the **trafficmaxlaneflow-YOUR-INFO-HERE-injector** pipeline. This is the injector pipeline that is pulling each line from the San Diego traffic sensor CSV file from GCS, and is pushing each event directly into Pub/Sub via the topic we created earlier.<br/><br/>
 8. Click on the **TextIO.Read** node in the Dataflow UI, and you'll see live statistics of Pub/Sub messages:
-<br/>
+<br/><br/>
 9. Click on the **Job Log** tab and you can expand each node to see how Dataflow is spinning up GCE instances to process the data pipeline. Toggle to **Detailed** mode and you can drill down even further. <br/><br/>
 10. Now go back to your list of dataflow jobs and select your active streaming job. Click on the PubsubIO.Read node in the UI and note the **Elements Added** amount trickling in events from our injector pipeline.<br/><br/>
 11. To view the output of your Dataflow pipeline, click on **BigQuery** in the Developer Console. <br/><br/>
