@@ -120,8 +120,8 @@ Once you've updated the arguments, and you've selected the appropriate class > t
 15. You've now successfully built an end-to-end event stream data pipeline using Pub/Sub, Dataflow and Bigquery!
 
 ## Lab Exercise 4: [optional] Connecting a UI to event streams
-1. Open up a web browser and navigate to the developer console for your project. Click the **Cloud Launcher** link on the left side of the screen.
-<img width="265" alt="4 1" src="https://cloud.githubusercontent.com/assets/8822452/10545740/3c6a79a0-73f8-11e5-9e2a-6ef7030cc548.png"> 
+1. Open up a web browser and navigate to the developer console for your project. Click the **Cloud Launcher** link on the left side of the screen. <br/>
+<img width="265" alt="4 1" src="https://cloud.githubusercontent.com/assets/8822452/10545740/3c6a79a0-73f8-11e5-9e2a-6ef7030cc548.png">
 
 2. On the Cloud Launcher screen, search for **LAMP**, and then choose **LAMP Stack (Google Click to Deploy)**.
 
@@ -151,8 +151,8 @@ sudo gcloud config set project <YOUR-PROJECT-ID>
 
 14. From the Credentials screen, click the **Add credentials** button and select **OAuth 2.0 client ID**. 
 
-15. On the **Create client ID** page, select **Web Application**. When prompted, enter “Lane Selector Client” in the **Name** field. In the **Authorized Javascript** origins field, enter “http://INSTANCE_IP_ADDRESS” where INSTANCE_IP_ADDRESS is the external IP address from Step 5. Finally, click the **Create** button.
-
+15. On the **Create client ID** page, select **Web Application**. When prompted, enter “Lane Selector Client” in the **Name** field. In the **Authorized Javascript** origins field, enter “http://INSTANCE_IP_ADDRESS” where INSTANCE_IP_ADDRESS is the external IP address from Step 5. Finally, click the **Create** button.<br/>
+<img width="525" alt="4 15" src="https://cloud.githubusercontent.com/assets/8822452/10545749/3c7a777e-73f8-11e5-87cf-e4122868860e.png">
 16. You will be prompted with information about your newly created OAuth client. Make a note of the client ID as you will need it in subsequent steps.
 <img width="645" alt="4 16" src="https://cloud.githubusercontent.com/assets/8822452/10545751/3c7f5f00-73f8-11e5-843f-83b9bce90496.png"><br/><br/>
 17. Go back to the SSH window for your instance from step 8. Open up the Nano editor to edit the index.html file in the laneselector folder you downloaded in step 9 with the following command: <br/>
