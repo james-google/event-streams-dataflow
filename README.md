@@ -129,7 +129,7 @@ On the Click to Deploy LAMP Stack screen, leave all the settings as they are by 
 6. On the pop-up window, check the box to Allow HTTP traffic and click the Apply button.
 
 7. Connect to your instance by clicking the SSH link.
-8. An SSH window will open. In that window, navigate to the /var/www/html folder with the following command: cd /var/www/html
+8. An SSH window will open. In that window, navigate to the /var/www/html folder with the following command: ```cd /var/www/html```
 
 9. Authenticate within your GCE VM by entering:
 sudo gcloud auth login
