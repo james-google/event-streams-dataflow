@@ -96,7 +96,7 @@ _**NOTE**: You will need to update your package name in each class file from **â
 2. We will now create a Pub/Sub topic in which our traffic sensor event injector code will publish traffic events.<br/>
 3. Go to your **Developer Console** > select **Big Data** > **Pub/Sub** > then click **New Topic**. Enter the desired name for the topic, then click **Create**.<br/><br/>
 <img width="562" alt="pub_sub_topics_-_james_demo_project" src="https://cloud.githubusercontent.com/assets/8822452/10254291/af417610-6910-11e5-9a34-f312b7d1f904.png"><br/><br/> 
-4. Next, navigate to **line XXX** where you can see the code leveraged to inject Pub/Sub events via a traffic event stream (events pull off of a San Fransisco set of highways).<br/><br/>
+4. Next, navigate to **line 327** where you can see the code leveraged to inject Pub/Sub events via a traffic event stream (events pull off of a San Fransisco set of highways).<br/><br/>
 5. For this example, the **TrafficMaxLaneFlowOptions** interface is setting the project up to pull known traffic sensor events from a shared GCS bucket, and you can download the CSV files to view the raw data. As you can see, compared to the WordCount lab this pipeline has options for streaming data from Pub/Sub, and on **line 338** we are using a utility class to set up our Pub/Sub topic as well as our desired output BigQuery table. <br/><br/>
 6. Repeat steps 4-7 from Lab 2, this time selecting the **TrafficMaxLaneFlow.java** class, and update the run configuration parameters with the following:
 
