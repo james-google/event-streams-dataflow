@@ -99,7 +99,7 @@ _**NOTE**: You will need to update your package name in each class file from **â
 3. Go to your **Developer Console** > select **Big Data** > **Pub/Sub** > then click **New Topic**. Enter the desired name for the topic, then click **Create**.<br/><br/>
 ![]()<br/><br/>
 4. Next, navigate to **line XXX** where you can see the code leveraged to inject Pub/Sub events via a traffic event stream (events pull off of a San Fransisco set of highways).
-![]()<br/><br/>
+<br/><br/>
 
 
 ## Lab Exercise 4: [optional] Connecting a UI to event streams
