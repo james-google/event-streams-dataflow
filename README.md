@@ -149,7 +149,7 @@ sudo gcloud config set project <YOUR-PROJECT-ID>
 17. Go back to the SSH window for your instance from step 8. Open up the Nano editor to edit the index.html file in the laneselector folder you downloaded in step 9 with the following command: 
  sudo nano /var/www/html/laneselector/index.html  
 18. The nano text editor will open. Scroll down the page until you find the PROJECT_ID, CLIENT_ID, and DATASET_TABLE JavaScript variables. Change the values of these three variables to match your project ID, the client ID you created in step 13, and the dataset and table name created by Cloud Dataflow. Hit Ctrl-x when finished and save the file when prompted. 
-19. In a web browser on your local machine, go to http://INSTANCE_IP_ADDRESS/laneselector/index.html, where INSTANCE_IP_ADDRESS is the external IP address of your instance from step 5. You will be prompted to allow the application access to Google BigQuery. Click the Allow button and you should see the UI.
+19. In a web browser on your local machine, go to http://INSTANCE_IP_ADDRESS/laneselector/index.html, where INSTANCE_IP_ADDRESS is the external IP address of your instance from step 5. You will be prompted to allow the application access to Google BigQuery. Click the Allow button and you should see the UI.<br/><br/>
 
 ## Clean up
 These steps are important as you'll be charged for your active Dataflow jobs, BigQuery datasets and GCE instances leveraged for the UI lab.
