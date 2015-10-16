@@ -92,11 +92,13 @@ In this third lab, we'll construct a traffic IoT sensor sample based on the SDK 
   * ExampleBigQueryTableOptions.java
   * ExamplePubsubTopicOptions.java
   * PubsubFileInjector.java<br/><br/>
-_**NOTE**: You will need to update your package name in each class file from **“com.google.cloud.dataflow.starter”** to the package name you created when setting up the Eclipse Dataflow project in Step 1 of Lab 1._<br/><br/>
-3. We will now create a Pub/Sub topic in which our traffic sensor event injector code will publish traffic events.<br/><br/>
-4. Go to your **Developer Console** > select **Big Data** > **Pub/Sub** > then click **New Topic**. Enter the desired name for the topic, then click **Create**.<br/><br/>
+_**NOTE**: You will need to update your package name in each class file from **“com.google.cloud.dataflow.starter”** to the package name you created when setting up the Eclipse Dataflow project in Step 1 of Lab 1._ 
+
+<br/>
+2.We will now create a Pub/Sub topic in which our traffic sensor event injector code will publish traffic events.<br/><br/>
+3. Go to your **Developer Console** > select **Big Data** > **Pub/Sub** > then click **New Topic**. Enter the desired name for the topic, then click **Create**.<br/><br/>
 ![]()<br/><br/>
-5. Next, navigate to **line XXX** where you can see the code leveraged to inject Pub/Sub events via a traffic event stream (events pull off of a San Fransisco set of highways).
+4. Next, navigate to **line XXX** where you can see the code leveraged to inject Pub/Sub events via a traffic event stream (events pull off of a San Fransisco set of highways).
 ![]()<br/><br/>
 
 
