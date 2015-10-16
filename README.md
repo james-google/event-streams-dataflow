@@ -119,8 +119,35 @@ Once you've updated the arguments, and you've selected the appropriate class > t
 14.  Click the **Run Query** button to execute the query. It may take a couple minutes for the first events to start showing up, but you will begin to see your events streaming into your BigQuery table. <br/><br/> 
 15. You've now successfully built an end-to-end event stream data pipeline using Pub/Sub, Dataflow and Bigquery!
 
-
-
-
-
 ## Lab Exercise 4: [optional] Connecting a UI to event streams
+1. Open up a web browser and navigate to the developer console for your project. Click the **Cloud Launcher** link on the left side of the screen.
+2. On the Cloud Launcher screen, search for **LAMP**, and then choose **LAMP Stack (Google Click to Deploy)**.
+3. On the Cloud Launcher screen, search for LAMP, and then choose LAMP Stack (Google Click to Deploy).
+4. On the LAMP Stack screen, click the Launch on Compute Engine button.
+On the Click to Deploy LAMP Stack screen, leave all the settings as they are by default and click the Deploy LAMP Stack button. The deployment will take 2-3 minutes to complete.
+5. Once the server has been deployed correctly you will be brought to a page that says Your LAMP Stack deployment is ready. On that page you will see the External IP for your instance. Click the external IP address which will bring up a prompt to enable HTTP traffic
+6. On the pop-up window, check the box to Allow HTTP traffic and click the Apply button.
+
+7. Connect to your instance by clicking the SSH link.
+8. An SSH window will open. In that window, navigate to the /var/www/html folder with the following command: cd /var/www/html
+
+9. Authenticate within your GCE VM by entering:
+sudo gcloud auth login
+10. Follow the instructions to open a browser for authentication > select your Google account and paste the authentication code in the VM shell window.
+11. Set your default project by entering:
+sudo gcloud config set project <YOUR-PROJECT-ID>
+12. Run the following command to download the UI:
+ sudo gsutil cp -r gs://gtc_event_stream/laneselector ./  
+13. Now you will need to create client credentials for the UI. Start by navigating to the developer console, and under the APIs & auth link, click the Credentials link.
+
+14. From the Credentials screen, click the Add credentials button and select OAuth 2.0 client ID. 
+
+15. On the Create client ID page, select Web Application. When prompted, enter “Lane Selector Client” in the Name field. In the Authorized Javascript origins field, enter “http://INSTANCE_IP_ADDRESS” where INSTANCE_IP_ADDRESS is the external IP address from Step 5. Finally, click the Create button.
+
+16. You will be prompted with information about your newly created OAuth client. Make a note of the client ID as you will need it in subsequent steps.
+
+17. Go back to the SSH window for your instance from step 8. Open up the Nano editor to edit the index.html file in the laneselector folder you downloaded in step 9 with the following command: 
+ sudo nano /var/www/html/laneselector/index.html  
+18. The nano text editor will open. Scroll down the page until you find the PROJECT_ID, CLIENT_ID, and DATASET_TABLE JavaScript variables. Change the values of these three variables to match your project ID, the client ID you created in step 13, and the dataset and table name created by Cloud Dataflow. Hit Ctrl-x when finished and save the file when prompted. 
+19. In a web browser on your local machine, go to http://INSTANCE_IP_ADDRESS/laneselector/index.html, where INSTANCE_IP_ADDRESS is the external IP address of your instance from step 5. You will be prompted to allow the application access to Google BigQuery. Click the Allow button and you should see the UI.
+
