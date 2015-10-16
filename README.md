@@ -121,15 +121,19 @@ Once you've updated the arguments, and you've selected the appropriate class > t
 
 ## Lab Exercise 4: [optional] Connecting a UI to event streams
 1. Open up a web browser and navigate to the developer console for your project. Click the **Cloud Launcher** link on the left side of the screen.
+
 2. On the Cloud Launcher screen, search for **LAMP**, and then choose **LAMP Stack (Google Click to Deploy)**.
-3. On the Cloud Launcher screen, search for LAMP, and then choose LAMP Stack (Google Click to Deploy).
-4. On the LAMP Stack screen, click the Launch on Compute Engine button.
-On the Click to Deploy LAMP Stack screen, leave all the settings as they are by default and click the Deploy LAMP Stack button. The deployment will take 2-3 minutes to complete.
-5. Once the server has been deployed correctly you will be brought to a page that says Your LAMP Stack deployment is ready. On that page you will see the External IP for your instance. Click the external IP address which will bring up a prompt to enable HTTP traffic
-6. On the pop-up window, check the box to Allow HTTP traffic and click the Apply button.
+
+3. On the **LAMP Stack** screen, click the Launch on Compute Engine button.
+
+4. On the Click to **Deploy LAMP Stack** screen, leave all the settings as they are by default and click the Deploy LAMP Stack button. The deployment will take 2-3 minutes to complete.
+
+5. Once the server has been deployed correctly you will be brought to a page that says **Your LAMP Stack deployment is ready**. On that page you will see the **External IP** for your instance. Click the external IP address which will bring up a prompt to enable HTTP traffic
+
+6. On the pop-up window, check the box to **Allow HTTP traffic** and click the **Apply** button.
 
 7. Connect to your instance by clicking the SSH link.
-8. An SSH window will open. In that window, navigate to the /var/www/html folder with the following command: ```cd /var/www/html```
+8. An SSH window will open. In that window, navigate to the /var/www/html folder with the following command: <br/>```cd /var/www/html``` 
 
 9. Authenticate within your GCE VM by entering:
 sudo gcloud auth login
