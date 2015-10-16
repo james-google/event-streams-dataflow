@@ -121,6 +121,8 @@ Once you've updated the arguments, and you've selected the appropriate class > t
 
 ## Lab Exercise 4: [optional] Connecting a UI to event streams
 1. Open up a web browser and navigate to the developer console for your project. Click the **Cloud Launcher** link on the left side of the screen.
+<img width="809" alt="3 1" src="https://cloud.githubusercontent.com/assets/8822452/10545205/84e8b53c-73f5-11e5-8213-f54eee12f927.png">
+<img width="265" alt="4 1" src="https://cloud.githubusercontent.com/assets/8822452/10545740/3c6a79a0-73f8-11e5-9e2a-6ef7030cc548.png">
 
 2. On the Cloud Launcher screen, search for **LAMP**, and then choose **LAMP Stack (Google Click to Deploy)**.
 
