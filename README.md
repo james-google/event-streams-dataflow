@@ -53,18 +53,16 @@ In this second lab, we'll use the WordCount example included in the [SDK example
 
 <br/>
 _**NOTE**: You will need to update your package name in each class file from **“com.google.cloud.dataflow.starter”** to the package name you created when setting up the Eclipse Dataflow project in Step 1 of Lab 1._
-<br/>
+<br/><br/>
 2. Scroll down to **line 196** and explore how this simple pipeline reads from a file on GCS, tokenizes the text lines into individual words, and then performs a frequency count on each of those words.
 
 ![](https://cloud.githubusercontent.com/assets/8822452/10249927/fe1c3ec0-68f5-11e5-8737-e70c826db6cf.png)<br/><br/>
 3. For a more detailed step-by-step walkthrough, check out the [WordCount Example Pipeline Tutorial](https://cloud.google.com/dataflow/examples/wordcount-example) on the Cloud Dataflow site.<br/><br/>
 4. To run this example, **right-click** on **WordCount.java** > select **Run As** > **Run Configurations...**<br/><br/>
-5. Select the **SERVICE** option in the left pane > then click **Search** under **Main class**. <br/><br/>
-6. Type in **WordCount** and select the appropriate class > then **OK**.<br/><br/>
-7. Next, select the **SERVICE** option > then the Arguments tab, and enter the following **Program arguments**:
-
-![](https://cloud.githubusercontent.com/assets/8822452/10250675/4acbb328-68fa-11e5-80ce-5fc00a343aa0.png)<br/><br/>
-8. After you enter the appropriate arguments, click **Run**.<br/><br/>
+5. Next, select the **“Dataflow Pipeline”** option > then press the **“New”** button to create a configuration of the selected type: <br/><br/>
+6. Click **“Search…”** button under the **Main** tab.<br/><br/>
+7. Type in **"WordCount"** and select the appropriate class > then **OK**.<br/><br/>
+8. Click the **“Pipeline Arguments”** tab, select the **“BlockingDataflowPipelineRunner”** option (this will allow us to run the pipeline in GCP), enter your **“Cloud Platform Project ID”** and specify the **“Cloud Storage Staging Location”** via the drop-down > then click **“Apply”**:<br/><br/>
 9. Navigate to [console.developers.google.com](https://console.developers.google.com) > then select **Dataflow** under the **Big Data** section to view the newly launched Dataflow job. <br/><br/>
 10. Click on the first Dataflow job (ordered by most recent in decending order), and you can now view the status and progress of your Dataflow WordCount job.
 
