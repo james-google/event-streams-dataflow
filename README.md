@@ -86,21 +86,18 @@ directory contains a few realistic end-to-end pipelines.<br/><br/>
 
 In this third lab, we'll construct a traffic IoT sensor sample based on the SDK example [here](https://github.com/GoogleCloudPlatform/DataflowJavaSDK/blob/master/examples/src/main/java/com/google/cloud/dataflow/examples/complete/TrafficMaxLaneFlow.java). This example will go beyond using just a static GCS input file, and instead will leverage Pub/Sub, Dataflow and BigQuery to demonstrate an end-to-end real world scenario. 
 
-1.To begin, drag and drop the following files into the source/main/java folder within your starter project in Eclipse, on top of the **"your.package.name"** package:
+1. To begin, drag and drop the following files into the source/main/java folder within your starter project in Eclipse, on top of the **"your.package.name"** package:
   * DataflowExampleOptions.java
   * DataflowExampleUtils.java
   * ExampleBigQueryTableOptions.java
   * ExamplePubsubTopicOptions.java
   * PubsubFileInjector.java<br/><br/>
-_**NOTE**: You will need to update your package name in each class file from **“com.google.cloud.dataflow.starter”** to the package name you created when setting up the Eclipse Dataflow project in Step 1 of Lab 1._ 
-
-<br/>
-2.We will now create a Pub/Sub topic in which our traffic sensor event injector code will publish traffic events.<br/><br/>
-3. Go to your **Developer Console** > select **Big Data** > **Pub/Sub** > then click **New Topic**. Enter the desired name for the topic, then click **Create**.<br/><br/>
+_**NOTE**: You will need to update your package name in each class file from **“com.google.cloud.dataflow.starter”** to the package name you created when setting up the Eclipse Dataflow project in Step 1 of Lab 1._ <br/>
+2. We will now create a Pub/Sub topic in which our traffic sensor event injector code will publish traffic events.<br/><br/>
+3. Go to your **Developer Console** > select **Big Data** > **Pub/Sub** > then click **New Topic**. Enter the desired name for the topic, then click **Create**.
 <img width="562" alt="pub_sub_topics_-_james_demo_project" src="https://cloud.githubusercontent.com/assets/8822452/10254291/af417610-6910-11e5-9a34-f312b7d1f904.png">
-<br/><br/>
 4. Next, navigate to **line XXX** where you can see the code leveraged to inject Pub/Sub events via a traffic event stream (events pull off of a San Fransisco set of highways).
-<br/><br/>
+5. 
 
 
 ## Lab Exercise 4: [optional] Connecting a UI to event streams
